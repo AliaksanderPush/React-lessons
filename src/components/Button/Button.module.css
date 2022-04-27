@@ -1,0 +1,32 @@
+.button {
+	text-transform: uppercase;
+	font-weight: 600;
+	cursor: pointer;
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+	color: white;
+	border: none;
+	margin: 10px;
+}
+
+.primary {
+	background-color: blue;
+}
+.blueviolet {
+	background-color: blueviolet;
+}
+.red {
+	background-color: red;
+}
+.green {
+	background-color: green;
+}
+.brown {
+	background-color: brown;
+}
+
+.button:hover {
+	border: 3px solid black;
+	transition: all 0.3s;
+}
