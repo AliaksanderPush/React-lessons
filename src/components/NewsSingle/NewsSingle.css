@@ -1,0 +1,47 @@
+.cards_container {
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	margin: 15px 0px;
+	box-shadow: 0px 8px 45px 0px #73737430;
+}
+.cards_date {
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+	color: black;
+}
+.cards_image {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cards_image img {
+	width: 100%;
+	height: 100%;
+}
+.cards_title {
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+	color: black;
+	display: flex;
+}
+.cards_content {
+	width: 100%;
+}
+.cards_title div {
+	padding: 10px;
+}
+
+.cards_btn {
+	width: 15%;
+}
+.cards_title_main {
+	width: 90%;
+}
