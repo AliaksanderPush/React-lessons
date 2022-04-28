@@ -28,7 +28,7 @@ export default class Header extends PureComponent {
 								{!viewNews ? 'View all news' : 'View important news'}
 							</Nav.Link>
 							<Nav.Link onClick={handleComeBack} href='#action2'>
-								Home
+								Come back
 							</Nav.Link>
 
 							<NavDropdown title='Sort by date' id='navbarScrollingDropdown'>
