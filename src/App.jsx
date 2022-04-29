@@ -69,6 +69,7 @@ export default class App extends PureComponent {
 	};
 
 	handleComeBack = () => {
+		this.setState({ news: null, oneNews: null, viewAllNews: false });
 		this.showNews();
 	};
 
