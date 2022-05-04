@@ -1,5 +1,14 @@
-export function formatDateTime(currTime) {
+export function getDateTime(): string {
+	const dt = new Date();
+	return formatDate(dt);
+}
+
+export function formatDateTime(currTime: string): string {
 	const dt = new Date(currTime);
+	return formatDate(dt);
+}
+
+function formatDate(dt: Date): string {
 	const year = dt.getFullYear();
 	const month = dt.getMonth() + 1;
 	const day = dt.getDate();
@@ -21,7 +30,7 @@ export function formatDateTime(currTime) {
 	);
 }
 
-function str0l(val, len) {
+function str0l(val: number, len: number): string {
 	let strVal = val.toString();
 	while (strVal.length < len) strVal = '0' + strVal;
 	return strVal;
