@@ -1,4 +1,4 @@
-import { IInfo } from './info.interface';
+import { IInfo } from './Info.props';
 import { Container, Row, Col } from 'react-bootstrap';
 import { NewsSingle } from '..';
 

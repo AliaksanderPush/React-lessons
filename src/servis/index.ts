@@ -1,2 +1,2 @@
-export * from './api.interface';
+export * from './News.props';
 export * from './Api';

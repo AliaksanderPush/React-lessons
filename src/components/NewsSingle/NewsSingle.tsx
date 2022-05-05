@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { formatDateTime } from '../../helpers/helper';
-import { INewsSingle } from './newsSingle.interface';
+import { INewsSingle } from './NewsSingle.props';
 import Button from 'react-bootstrap/Button';
 import './NewsSingle.css';
 

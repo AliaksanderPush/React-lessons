@@ -1,4 +1,4 @@
-export interface IApi {
+export interface INews {
 	id?: string;
 	publishedAt: string;
 	content: string;

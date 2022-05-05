@@ -1,19 +1,19 @@
 import { FC, useEffect, useState } from 'react';
 import { Form, Header } from './components';
-import { IApi } from './servis';
+import { INews } from './servis';
 import { getNews } from './servis';
 import { News } from './components/News/News';
 import { Footer } from './components';
 import { ChangeEvent } from 'react';
-import { FormControlElement } from './components/Header/header.interface';
+import { FormControlElement } from './components/Header/Header.props';
 import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App: FC = () => {
-	const [news, setNews] = useState<IApi[]>([]);
+	const [news, setNews] = useState<INews[]>([]);
 	const [viewAllNews, setViewAllNews] = useState<boolean>(false);
 	const [search, setSearch] = useState<string>('');
-	const [oneNews, setOneNews] = useState<IApi[]>([]);
+	const [oneNews, setOneNews] = useState<INews[]>([]);
 
 	const handleViewNews = () => {
 		setViewAllNews(!viewAllNews);
@@ -50,7 +50,7 @@ const App: FC = () => {
 		}
 	};
 
-	const searchByTitle = (row: IApi['title']): boolean => {
+	const searchByTitle = (row: INews['title']): boolean => {
 		const titleArr = row.split(' ');
 		const searchWords = search;
 		const serchWordArr = searchWords.split(' ');
@@ -71,7 +71,7 @@ const App: FC = () => {
 		showNews();
 	};
 
-	const handleAddNews = (data: IApi) => {
+	const handleAddNews = (data: INews) => {
 		const id = uuidv4();
 		data['id'] = id;
 		setNews([...news, data]);

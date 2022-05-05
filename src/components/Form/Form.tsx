@@ -1,12 +1,12 @@
 import { useState, FormEvent } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
-import { IApi } from '../../servis/api.interface';
-import { IForm } from './form.interface';
+import { INews } from '../../servis';
+import { IForm } from './form.props';
 import { getDateTime } from '../../helpers/helper';
 import './Form.css';
 
 export const Form = ({ handleAddNews }: IForm): JSX.Element => {
-	const [data, setData] = useState<IApi>({
+	const [data, setData] = useState<INews>({
 		publishedAt: getDateTime(),
 		content: '',
 		description: '',

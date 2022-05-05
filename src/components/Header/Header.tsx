@@ -1,5 +1,5 @@
 import { Button, NavDropdown, Nav, Navbar, Container, FormControl, Form } from 'react-bootstrap';
-import { IHeader } from './header.interface';
+import { IHeader } from './Header.props';
 
 export const Header = ({
 	handleAscerding,
