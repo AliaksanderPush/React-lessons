@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { formatDateTime } from '../../helpers/helper';
 import { INewsSingle } from './NewsSingle.props';
-import Button from 'react-bootstrap/Button';
-import './NewsSingle.css';
+import { Button } from '..';
+import styles from './NewsSingle.module.css';
 
 export const NewsSingle = ({ index, item }: INewsSingle): JSX.Element => {
 	const { publishedAt, urlToImage, title, content, description } = item;
@@ -22,24 +22,24 @@ export const NewsSingle = ({ index, item }: INewsSingle): JSX.Element => {
 	}, [index]);
 
 	return (
-		<div className='cards_container'>
-			<div className='cards_date'>{data}</div>
-			<div className='cards_image'>
+		<div className={styles.cards_container}>
+			<div className={styles.cards_date}>{data}</div>
+			<div className={styles.cards_image}>
 				<img src={urlToImage} alt={title} />
 			</div>
-			<div className='cards_title'>
-				<div className='cards_title_main'>{title}</div>
-				<div className='cards_btn'>
-					<Button onClick={hanledWatch} variant='primary' size='sm'>
+			<div className={styles.cards_title}>
+				<div className={styles.cards_title_main}>{title}</div>
+				<div className={styles.cards_btn}>
+					<Button onClick={hanledWatch} appearance='primary' size='s'>
 						More&gt;&gt;&gt;{' '}
 					</Button>
 				</div>
 			</div>
 
 			{show ? (
-				<div className='cards_details'>
-					<div className='cards_content'>{content}</div>
-					<div className='cards_descriptions'>{description}</div>
+				<div className={styles.cards_details}>
+					<div className={styles.cards_content}>{content}</div>
+					<div className={styles.cards_descriptions}>{description}</div>
 				</div>
 			) : null}
 		</div>

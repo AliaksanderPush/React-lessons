@@ -1,0 +1,50 @@
+.button {
+	display: inline-block;
+	text-align: center;
+	border-radius: 3px;
+	color: white;
+}
+.primary {
+	background-color: rgb(17, 17, 220);
+	border: none;
+}
+.primary:hover {
+	background-color: rgb(123, 202, 6);
+	transition: all 0.3s;
+}
+.ghost {
+	border: 2px solid #198754;
+	color: #198754;
+	background: none;
+}
+
+.primary_ghost {
+	border: 2px solid rgb(193, 193, 6);
+	color: rgb(193, 193, 6);
+	background: none;
+}
+
+.primary_ghost:hover {
+	color: black;
+	background-color: rgb(193, 193, 6);
+	transition: all 0.3s;
+}
+
+.ghost:hover {
+	color: white;
+	background-color: #198754;
+	transition: all 0.3s;
+}
+
+.size_s {
+	width: 100px;
+	height: 40px;
+	font-size: 18px;
+	line-height: 14px;
+}
+.size_m {
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+	line-height: 20px;
+}

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState, MouseEvent } from 'react';
 import { Form, Header } from './components';
 import { INews } from './servis';
 import { getNews } from './servis';
@@ -14,6 +14,7 @@ const App: FC = () => {
 	const [viewAllNews, setViewAllNews] = useState<boolean>(false);
 	const [search, setSearch] = useState<string>('');
 	const [oneNews, setOneNews] = useState<INews[]>([]);
+	const [showForm, setShowForm] = useState<boolean>(false);
 
 	const handleViewNews = () => {
 		setViewAllNews(!viewAllNews);
@@ -39,7 +40,8 @@ const App: FC = () => {
 		setSearch(e.target.value);
 	};
 
-	const handleSearch = () => {
+	const handleSearch = (e: MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
 		if (!!news.length && !!search.length) {
 			const copyNews = [...news];
 			const searchNews = copyNews.filter((row) => searchByTitle(row.title));
@@ -74,8 +76,13 @@ const App: FC = () => {
 	const handleAddNews = (data: INews) => {
 		const id = uuidv4();
 		data['id'] = id;
-		setNews([...news, data]);
+		setOneNews([data, ...oneNews]);
 		console.log('add>>', data);
+	};
+
+	const handleShow = (e: MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
+		setShowForm(!showForm);
 	};
 
 	useEffect(() => {
@@ -84,6 +91,7 @@ const App: FC = () => {
 	return (
 		<div className='content_all'>
 			<Header
+				handleShow={handleShow}
 				handleAscerding={handleAscerding}
 				handleViewNews={handleViewNews}
 				handleDescending={handleDescending}
@@ -92,7 +100,7 @@ const App: FC = () => {
 				handleSearch={handleSearch}
 				handleComeBack={handleComeBack}
 			/>
-			<Form handleAddNews={handleAddNews} />
+			{showForm ? <Form handleAddNews={handleAddNews} /> : null}
 			<News info={!viewAllNews ? oneNews : news} />
 			<Footer />
 		</div>

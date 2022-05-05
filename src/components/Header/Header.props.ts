@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, MouseEvent } from 'react';
 
 export type FormControlElement = HTMLInputElement | HTMLTextAreaElement;
 
@@ -7,7 +7,8 @@ export interface IHeader {
 	handleViewNews: () => void;
 	viewNews: boolean;
 	handleDescending: () => void;
-	handleSearch: () => void;
+	handleSearch: (e: MouseEvent<HTMLButtonElement>) => void;
 	handleChange: (e: ChangeEvent<FormControlElement>) => void;
 	handleComeBack: () => void;
+	handleShow: (e: MouseEvent<HTMLButtonElement>) => void;
 }

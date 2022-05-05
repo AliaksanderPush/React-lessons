@@ -1,9 +1,10 @@
 import { useState, FormEvent } from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { INews } from '../../servis';
 import { IForm } from './form.props';
+import { Input } from '..';
 import { getDateTime } from '../../helpers/helper';
-import './Form.css';
+import { Button } from '..';
 
 export const Form = ({ handleAddNews }: IForm): JSX.Element => {
 	const [data, setData] = useState<INews>({
@@ -41,8 +42,7 @@ export const Form = ({ handleAddNews }: IForm): JSX.Element => {
 						<Row className='justify-content-center mt-2'>
 							<Col>
 								<p className=' mb-0'>Title:</p>
-								<input
-									className='main_input'
+								<Input
 									type='text'
 									name='title'
 									value={data.title}
@@ -53,8 +53,8 @@ export const Form = ({ handleAddNews }: IForm): JSX.Element => {
 						<Row className='justify-content-center mt-2'>
 							<Col>
 								<p className=' mb-0'>Content:</p>
-								<input
-									className='main_input'
+								<Input
+									appearance={'primary'}
 									type='text'
 									name='content'
 									value={data.content}
@@ -65,8 +65,8 @@ export const Form = ({ handleAddNews }: IForm): JSX.Element => {
 						<Row className='justify-content-center mt-2'>
 							<Col>
 								<p className=' mb-0'>urlToImage:</p>
-								<input
-									className='main_input'
+								<Input
+									appearance={'primary'}
 									type='text'
 									name='urlToImage'
 									value={data.urlToImage}
@@ -78,7 +78,7 @@ export const Form = ({ handleAddNews }: IForm): JSX.Element => {
 							<Col xs={6} md='auto'>
 								<p className='mb-0'>Description:</p>
 								<textarea
-									className='main_textaria'
+									style={{ width: '400px', height: '200px' }}
 									name='description'
 									value={data.description}
 									onChange={handleInputChange}
@@ -87,12 +87,9 @@ export const Form = ({ handleAddNews }: IForm): JSX.Element => {
 						</Row>
 						<Row className='justify-content-center'>
 							<Col sx={6} mt={3} mb={2} md='auto'>
-								<Button
-									className='mt-2'
-									as='input'
-									type='submit'
-									value='Добавить'
-								/>{' '}
+								<Button appearance='primary' size='m'>
+									Add News
+								</Button>
 							</Col>
 						</Row>
 					</form>

@@ -1,4 +1,5 @@
-import { Button, NavDropdown, Nav, Navbar, Container, FormControl, Form } from 'react-bootstrap';
+import { NavDropdown, Nav, Navbar, Container, FormControl, Form } from 'react-bootstrap';
+import { Button } from '..';
 import { IHeader } from './Header.props';
 
 export const Header = ({
@@ -9,6 +10,7 @@ export const Header = ({
 	handleSearch,
 	handleChange,
 	handleComeBack,
+	handleShow,
 }: IHeader): JSX.Element => {
 	return (
 		<Navbar bg='dark' variant='dark' expand='lg'>
@@ -45,8 +47,16 @@ export const Header = ({
 							aria-label='Search'
 							onChange={(e) => handleChange(e)}
 						/>
-						<Button onClick={handleSearch} variant='outline-success'>
+						<Button
+							className='me-2'
+							onClick={(e) => handleSearch(e)}
+							size={'s'}
+							appearance={'ghost'}
+						>
 							Search
+						</Button>
+						<Button onClick={(e) => handleShow(e)} size={'m'} appearance={'prim-gh'}>
+							Add news
 						</Button>
 					</Form>
 				</Navbar.Collapse>
