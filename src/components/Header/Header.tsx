@@ -1,0 +1,66 @@
+import { NavDropdown, Nav, Navbar, Container, FormControl, Form } from 'react-bootstrap';
+import { Button } from '..';
+import { IHeader } from './Header.props';
+
+export const Header = ({
+	handleAscerding,
+	handleViewNews,
+	viewNews,
+	handleDescending,
+	handleSearch,
+	handleChange,
+	handleComeBack,
+	handleShow,
+}: IHeader): JSX.Element => {
+	return (
+		<Navbar bg='dark' variant='dark' expand='lg'>
+			<Container>
+				<Navbar.Brand href='#'>News Today</Navbar.Brand>
+				<Navbar.Toggle aria-controls='navbarScroll' />
+				<Navbar.Collapse id='navbarScroll'>
+					<Nav
+						className='me-auto my-6 my-lg-0'
+						style={{ maxHeight: '100px' }}
+						navbarScroll
+					>
+						<Nav.Link onClick={handleViewNews} href='#action1'>
+							{!viewNews ? 'View all news' : 'View important news'}
+						</Nav.Link>
+						<Nav.Link onClick={handleComeBack} href='#action2'>
+							Home
+						</Nav.Link>
+
+						<NavDropdown title='Sort by date' id='navbarScrollingDropdown'>
+							<NavDropdown.Item onClick={handleAscerding} href='#action3'>
+								ascending order
+							</NavDropdown.Item>
+							<NavDropdown.Item onClick={handleDescending} href='#action4'>
+								descending order
+							</NavDropdown.Item>
+						</NavDropdown>
+					</Nav>
+					<Form className='d-flex'>
+						<FormControl
+							type='search'
+							placeholder='Search'
+							className='me-2'
+							aria-label='Search'
+							onChange={(e) => handleChange(e)}
+						/>
+						<Button
+							className='me-2'
+							onClick={(e) => handleSearch(e)}
+							size={'s'}
+							appearance={'ghost'}
+						>
+							Search
+						</Button>
+						<Button onClick={(e) => handleShow(e)} size={'m'} appearance={'prim-gh'}>
+							Add news
+						</Button>
+					</Form>
+				</Navbar.Collapse>
+			</Container>
+		</Navbar>
+	);
+};
