@@ -1,5 +1,5 @@
 import { INews } from '../../servis';
 
 export interface IInfo {
-	info: INews[];
+	info: INews[] | null;
 }

@@ -45,6 +45,11 @@
 .size_m {
 	width: 200px;
 	height: 40px;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 20px;
+}
+
+.size_sm {
+	width: 40px;
+	height: 40px;
 }

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { formatDateTime } from '../../helpers/helper';
 import { INewsSingle } from './NewsSingle.props';
-import { Button } from '..';
 import styles from './NewsSingle.module.css';
+import { Button } from '..';
 
 export const NewsSingle = ({ index, item }: INewsSingle): JSX.Element => {
 	const { publishedAt, urlToImage, title, content, description } = item;
@@ -30,8 +30,8 @@ export const NewsSingle = ({ index, item }: INewsSingle): JSX.Element => {
 			<div className={styles.cards_title}>
 				<div className={styles.cards_title_main}>{title}</div>
 				<div className={styles.cards_btn}>
-					<Button onClick={hanledWatch} appearance='primary' size='s'>
-						More&gt;&gt;&gt;{' '}
+					<Button appearance='ghost' size='sm' onClick={hanledWatch}>
+						&#8921;
 					</Button>
 				</div>
 			</div>
