@@ -4,5 +4,5 @@ export interface ButtonProps
 	extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
 	children: ReactNode;
 	appearance: 'primary' | 'ghost' | 'prim-gh';
-	size: 's' | 'm';
+	size: 's' | 'm' | 'sm';
 }

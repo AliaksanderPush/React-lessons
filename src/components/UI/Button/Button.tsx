@@ -16,6 +16,7 @@ export const Button = ({
 				[styles.ghost]: appearance === 'ghost',
 				[styles.primary_ghost]: appearance === 'prim-gh',
 				[styles.size_s]: size === 's',
+				[styles.size_sm]: size === 'sm',
 				[styles.size_m]: size === 'm',
 			})}
 			{...props}

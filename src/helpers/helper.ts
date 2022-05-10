@@ -1,3 +1,5 @@
+import { INews } from '../servis';
+
 export function getDateTime(): string {
 	const dt = new Date();
 	return formatDate(dt);
@@ -35,3 +37,12 @@ function str0l(val: number, len: number): string {
 	while (strVal.length < len) strVal = '0' + strVal;
 	return strVal;
 }
+
+export const searchByTitle = (
+	row: INews['title'],
+	searchWords: string
+): boolean => {
+	const titleArr = row.split(' ');
+	const serchWordArr = searchWords.split(' ');
+	return titleArr.some((item) => serchWordArr.includes(item));
+};

@@ -1,5 +1,5 @@
 .cards_container {
-	width: 800px;
+	width: 874px;
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
@@ -39,9 +39,9 @@
 	padding: 10px;
 }
 
-.cards_btn {
-	width: 15%;
-}
 .cards_title_main {
 	width: 90%;
+}
+.cards_btn svg:hover {
+	font-size: 28px;
 }
