@@ -1,15 +1,14 @@
 import { FC } from 'react';
 import { NewsPage } from './pages/news/News.page';
-import { Footer } from './components';
+import { withLayout } from './layout/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App: FC = () => {
 	return (
-		<div className='content_all'>
+		<>
 			<NewsPage />
-			<Footer />
-		</div>
+		</>
 	);
 };
 
-export default App;
+export default withLayout(App);
